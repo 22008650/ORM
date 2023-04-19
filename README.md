@@ -6,7 +6,8 @@ To develop a Django application to store and retrieve data from a database using
 
 ## Entity Relationship Diagram
 
-![Entity Relationship Diagram](./er.png)
+![er](https://user-images.githubusercontent.com/122548204/233128484-212f1d91-0b5b-424f-96bb-0949f92261ac.png)
+
 
 ## DESIGN STEPS
 
@@ -32,24 +33,25 @@ Models.py
 
 from django.db import models
 from django.contrib import admin
-class Employee (models.Model):
-eid=models.CharField(max_length=20,help_text="Employee ID")
-name=models.CharField(max_length=100)
-salary=models.IntegerField()
-age=models.IntegerField()
-email=models.EmailField()
-class EmployeeAdmin(admin.ModelAdmin):
-list_display=('eid','name','salary','age','email')
+class Student (models.Model):
+    name=models.CharField(max_length=20,help_text="student")
+    rollno=models.IntegerField()
+    marks=models.IntegerField()
+    age=models.IntegerField()
+    email=models.EmailField()
+class StudentAdmin(admin.ModelAdmin):
+    list_display=('name','rollno','marks','age','email') 
 
 Admin.py 
 
 from django.contrib import admin
-from .models import Employee,EmployeeAdmin
-admin.site.register(Employee,EmployeeAdmin)
+from .models import Student,StudentAdmin
+admin.site.register(Student,StudentAdmin)
 ```
 ## OUTPUT
  
-![output](./out.png)
+![admin1](https://user-images.githubusercontent.com/122548204/233128328-7009af73-3134-4e11-bc82-349c600c2afb.png)
+
 
 ## RESULT
 
